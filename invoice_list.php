@@ -13,6 +13,7 @@
         border-radius:100%;
     }
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Invoices</h3>

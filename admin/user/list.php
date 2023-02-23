@@ -55,8 +55,20 @@
 							<td class="text-center"><img src="<?php echo validate_image($row['avatar']) ?>" class="img-avatar img-thumbnail p-0 border-2" alt="user_avatar"></td>
 							<td><?php echo ucwords($row['name']) ?></td>
 							<td ><p class="m-0 truncate-1"><?php echo $row['username'] ?></p></td>
-							<td ><p class="m-0"><?php echo ($row['type'] == 1 )? "Active" : "Inactive" ?></p></td>
-							<td ><p class="m-0"><?php echo ($row['type'] == 1 )? "Adminstrator" : "Staff" ?></p></td>
+								<td class="text-center">
+                                <?php if($row['type'] == 1): ?>
+                                    <span class="badge badge-primary rounded-pill">Administrator</span>
+                                <?php else: ?>
+                                    <span class="badge badge-secondary rounded-pill">Staff</span>
+                                <?php endif; ?>
+                            </td>
+                            	<td class="text-center">
+                                <?php if($row['status'] == 1): ?>
+                                    <span class="badge badge-success rounded-pill">Active</span>
+                                <?php else: ?>
+                                    <span class="badge badge-danger rounded-pill">Inactive</span>
+                                <?php endif; ?>
+                            </td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 				                  		Action

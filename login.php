@@ -1,6 +1,7 @@
-<?php require_once('./config.php') ?>
+<?php require_once('config.php') ?>
 <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
  <?php require_once('inc/header.php') ?>
 
   
@@ -87,9 +88,9 @@
       </form>
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
+     <!-- <p class="mb-1">
         <a href="forgot-password.html">I forgot my password</a>
-      </p> 
+      </p> -->
       
     </div>
     <!-- /.card-body -->
@@ -205,7 +206,7 @@
 
 <div class="container-width" id="i8dikd">
 
-<div class="flex-title" id="ilxtbg">Requiements
+<div class="flex-title" id="ilxtbg">Requirements
 </div>
 
 <div class="cars" id="i8lbm7">

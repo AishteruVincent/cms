@@ -132,10 +132,11 @@
 					<div class="form-group">
 						<label for="attachment">Attachments</label>
 						<input type="file" class="form-control" name="attachment[]" id="attachment" multiple>
+						
 					</div>
 
 					<input type="submit" class="btn btn-primary" value="Apply">
-
+					
 				</div>
 			</div>
 			
@@ -156,7 +157,7 @@
 <script src="plugins/chart.js/Chart.min.js"></script>
 <script src="plugins/datatables/jquery.dataTables.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-<script src="script/swal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- PAGE SCRIPTS -->
 <script src="dist/js/pages/dashboard2.js"></script>
 		<script>
@@ -200,7 +201,7 @@
 					var formData = new FormData(this);
 
 					$.ajax({
-						url: 'phpfunction/myfunction.php',
+						url: '/phpfunction/myfunction.php',
 						type: 'POST',
 						data: formData,
 						contentType: false,

@@ -5,12 +5,14 @@ error_reporting(E_ALL ^ E_NOTICE);
 //include '/phpfunction/loginfunction.php';
 session_start();
 if(!isset($_SESSION['username'])){
-  header("Location: ../login.php");
+  //header("Location: ../login.php");
 }
 ?>
 
 
 <!-- Font Awesome -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -33,86 +35,72 @@ input[type="text"]:focus {
   border-bottom-color: blue;
 }
 </style>
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <?php// include 'nav.php'; ?>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        <?php //include 'aside.php'; ?>
-
-        <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">List of Reports</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                                <li class="breadcrumb-item active">List of Reports</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-                <button class="btn btn-info" type="submit" hidden><a href="add_course.php" class="text-white">Add New Invoice</a></button>
-
-            </div><!-- /.content-header -->
-
-          
-            <section class="content">
-          
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="card col-12">
-                            <div class="card-header">
+<body class="hold-transition sidebar-collapsed">
+   <div class="card card-outline card-primary">
+	<div class="card-header">
+		<h3 class="card-title">List of Reports</h3>
+		<div class="card-tools">
+		</div>
+		 <div class="card-header">
                                 <div class="card-toolbar" style="float:right;">
                                 <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
                                     Create Report
                                 </button>
                                 </div>
                             </div>
-
-                            <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Date </th>
-                                            <th>Concern</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <?php	
-                                        $result = mysqli_query($conn,"SELECT *  from `reports`");
-                                    
-                                        ?>
-                                        <?php while ($row = $result->fetch_assoc()) : ?>
-                                            <tr>
-                                                <td class="text-right">
-                                                <?php echo date("Y-m-d H:i", strtotime($row['date_created'])) ?></td>
-                                                <td>
-                                                    <?php echo $row['concern'];?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $row['status']?>
-                                                </td>
-                                            </tr>
-                                        <?php endwhile; ?>
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-    </div>
+	</div>
+	<div class="card-body">
+		<div class="container-fluid">
+        <div class="container-fluid">
+			<table class="table table-bordered table-striped">
+				<colgroup>
+					<col width="5%">
+					<col width="15%">
+					<col width="20%">
+					<col width="20%">
+					<col width="10%">
+					<col width="15%">
+					<col width="15%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Date Created</th>
+						<th>Name</th>
+						<th>Concern</th>
+						<th>Floor</th>
+						<th>Room</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+					$i = 1;
+						$qry = $conn->query("SELECT * from `reports` order by `date_created` asc");
+						while($row = $qry->fetch_assoc()):
+					?>
+						<tr>
+							<td class="text-center"><?php echo $i++; ?></td>
+							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
+							<td><?php echo $row['name'] ?></td>
+							<td><?php echo $row['concern'] ?></td>
+                            <td><?php echo $row['floor'] ?></td>
+                            <td><?php echo $row['room'] ?></td>
+							<td class="text-center">
+                                <?php if($row['status'] == 1): ?>
+                                    <span class="badge badge-success rounded-pill">Done</span>
+                                <?php else: ?>
+                                    <span class="badge badge-danger rounded-pill">Pending</span>
+                                <?php endif; ?>
+                            </td>
+						</tr>
+					<?php endwhile; ?>
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
+</div>
 </body>
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -212,8 +200,8 @@ input[type="text"]:focus {
                 </div>
             </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-        <button type="button" class="btn btn-primary submit_report">Submit</button>
+       <button type="button" class="btn btn-primary submit_report">Submit</button> 
+       <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
       </div>
     </div>
     </form>
