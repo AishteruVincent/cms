@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 17, 2023 at 03:37 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 08, 2023 at 04:02 PM
+-- Server version: 10.5.16-MariaDB-cll-lve
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cms_db`
+-- Database: `u853565338_aero`
 --
 
 -- --------------------------------------------------------
@@ -75,17 +75,15 @@ CREATE TABLE `applicant` (
 --
 
 INSERT INTO `applicant` (`id`, `idnumber`, `studentname`, `program`, `contact_number`, `email`, `parentname`, `parent_address`, `parent_contact`, `floor`, `room`, `status`, `remarks`, `date_added`) VALUES
-(12, '012345', 'John Doe', 'Associate in Aviation Electronics Technology', '09000000000', 'johndoe@gmail.com', 'John Mother', 'Area 51', '090000000000', '2nd Floor', 'Room 209', 1, 'Approved\n                            ', '2023-02-16 14:57:00'),
-(13, '18010123', 'Test Student', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'qwe', 'qwe', 'qwe', '4th Floor', 'Room 409', 1, '', '2023-02-16 15:18:45'),
-(14, '18010123', 'Test Student', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'qwe', 'qwe', 'qwe', '4th Floor', 'Room 409', 1, '', '2023-02-16 15:19:11'),
-(15, '18010123', 'Test Student', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'qwe', 'qwe', 'qwe', '4th Floor', 'Room 409', 1, '', '2023-02-16 15:19:17'),
-(16, '18010123', 'Test Student', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'qwe', 'qwe', 'qwe', '4th Floor', 'Room 409', 1, '', '2023-02-16 17:05:38'),
-(17, '18010123', 'Test Student', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'qwe', 'qwe', 'qwe', '4th Floor', 'Room 409', 0, '', '2023-02-16 14:18:00'),
-(18, '181818', 'Taylor Swift', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'taylorswift13@gmail.com', 'qwe', 'qwe', '09301653187', '3rd Floor', 'Room 309', 0, '', '2023-02-16 14:19:22'),
-(19, '181818', 'Taylor Swift', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'taylorswift13@gmail.com', 'qwe', 'qwe', '09301653187', '3rd Floor', 'Room 309', 0, '', '2023-02-16 14:19:22'),
-(20, '181818', 'Taylor Swift', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'taylorswift13@gmail.com', 'qwe', 'qwe', '09301653187', '3rd Floor', 'Room 309', 0, '', '2023-02-16 14:20:11'),
-(21, '181818', 'Taylor Swift', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'taylorswift13@gmail.com', 'qwe', 'qwe', '09301653187', '3rd Floor', 'Room 309', 0, '', '2023-02-16 14:20:11'),
-(22, '18010123', 'Taylor Swift', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'taylorswift@gmail.com', 'qwe', 'qwe', 'qwe', '3rd Floor', 'Room 309', 0, '', '2023-02-16 14:20:53');
+(1, '123', 'shervie', 'Bachelor of Science in Aeronautical Engineering', '123', 'shervie@gmail.com', 'pat', 'Baclaran', '123', '3rd Floor', 'Room 308', 1, '', '2023-02-23 02:24:00'),
+(3, '2023010003', 'Test', 'Bachelor of Science in Aviation Information Technology', '09301653187', 'vincentcunanan53@gmail.com', 'Test', 'Test', 'Test', '2nd Floor', 'Room 209', 1, '', '2023-02-23 07:31:56'),
+(5, '00000', 'Dowee Donut', 'Bachelor of Science in Aviation Logistics', '00000', 'donut@gmail.com', 'Dowee Donut', 'Cavite', '00000', '2nd Floor', 'Room 209', 1, '', '2023-03-08 14:31:49'),
+(6, '123', 'sheska', 'Bachelor of Science in Aeronautical Engineering', '123', 'sheska@gmail.com', 'pat', 'Baclaran', '+639993449634', '3rd Floor', 'Room 302', 1, '', '2023-02-24 22:51:55'),
+(7, '202301004', 'Vincent Cunanan', 'Bachelor of Science in Aviation Information Technology', '09301653187', 'vincentcunanan53@gmail.com', 'Test', 'Test', '09301653187', '4th Floor', 'Room 409', 1, '', '2023-02-26 15:20:02'),
+(9, '2023010005', 'Lelouch Lamperouge', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'Test', 'Test', '09301653187', '4th Floor', 'Room 409', 1, '', '2023-03-02 15:31:26'),
+(33, '1234567', 'W', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'G', 'G', 'G', '4th Floor', 'Room 409', 1, '', '2023-03-03 07:34:17'),
+(34, '123444444', 'G', 'Bachelor of Science in Aeronautical Engineering', '4444444444444', 'vincentcunanan53@gmail.com', 'G', 'G', '111111111111111', '3rd Floor', 'Room 309', 1, '', '2023-03-03 07:53:27'),
+(40, '18010143', 'Random Student', 'Bachelor of Science in Aeronautical Engineering', '09301653187', 'vincentcunanan53@gmail.com', 'G', 'G', 'G', '4th Floor', 'Room 408', 1, '', '2023-03-07 16:57:20');
 
 -- --------------------------------------------------------
 
@@ -105,8 +103,22 @@ CREATE TABLE `applicant_attachment` (
 --
 
 INSERT INTO `applicant_attachment` (`id`, `applicant_id`, `attachment`, `status`) VALUES
-(20, 12, '1675963347IMG_9117.HEIC', 'active'),
-(21, 12, '1675963347IMG_9110.HEIC', 'active');
+(1, 1, '1677118179LIE DETECTIONS TECHNIQUES.docx', 'active'),
+(2, 1, '1677118179print.docx', 'active'),
+(3, 3, '1677137499Taylor_Swift_(6966830273).jpg', 'active'),
+(4, 4, '1677138375319075797_5795467880522895_3303545777965571404_n.jpg', 'active'),
+(5, 6, '1677279076Adminpng.png', 'active'),
+(6, 6, '1677279076Untitled.png', 'active'),
+(7, 6, '1677279076student.png', 'active'),
+(8, 7, '1677335575319075797_5795467880522895_3303545777965571404_n.jpg', 'active'),
+(9, 8, '1677476374Screenshot_20230227_095954.jpg', 'active'),
+(10, 9, '1677771073319075797_5795467880522895_3303545777965571404_n.jpg', 'active'),
+(11, 10, '1677771536Adminpng.png', 'active'),
+(12, 10, '1677771536Untitled.png', 'active'),
+(13, 35, '1677831887student.png', 'active'),
+(14, 36, '1677933960Letter-of-Intent-2022 (1).pdf', 'active'),
+(15, 37, '1677990540NetAcad Learning Transcript.pdf', 'active'),
+(16, 41, '1678285571Human-rights-CHR_Philippines.pdf', 'active');
 
 -- --------------------------------------------------------
 
@@ -130,8 +142,12 @@ CREATE TABLE `client_list` (
 
 INSERT INTO `client_list` (`id`, `client_code`, `password`, `fullname`, `status`, `date_created`, `date_updated`) VALUES
 (1, '20210001', 'a88df23ac492e6e2782df6586a0c645f', 'Williams, Mike D', 1, '2021-11-05 13:12:15', '2021-11-05 14:58:01'),
-(4, '20210002', '100af4e620024b40bbfc49214ea66509', 'Lou, Samantha Jane C', 1, '2021-11-05 14:59:58', '2021-11-05 15:19:32'),
-(14, '20230001', '05e2b841411d095d8836e21d8f10ee79', 'Test, Test ', 1, '2023-02-17 00:40:25', '2023-02-17 00:40:25');
+(18, '2023010002', 'ba4031775428739ad624b6324ea4e389', 'Swift, Taylor ', 1, '2023-02-20 12:10:28', '2023-02-25 06:37:07'),
+(24, '202301004', 'e16e717fc8122e33aaf89332d4be5c02', 'Cunanan, Vincent ', 1, '2023-02-25 14:32:55', '2023-03-02 19:21:14'),
+(26, '2023010005', 'deec9ac7978062cc45865094d518ef5d', 'Lamperouge, Lelouch ', 1, '2023-03-02 15:31:13', '2023-03-02 15:32:11'),
+(51, '1234567', '1234567', 'W', 1, '2023-03-03 07:21:37', '2023-03-03 07:21:37'),
+(68, '18010143', 'b410b5e9b1250e2317087fa61f4d3b9b', 'Random Student', 1, '2023-03-07 16:57:09', '2023-03-07 16:57:31'),
+(70, '', '', '', 1, '2023-03-08 14:31:49', '2023-03-08 14:31:49');
 
 -- --------------------------------------------------------
 
@@ -160,24 +176,30 @@ INSERT INTO `client_meta` (`client_id`, `meta_field`, `meta_value`) VALUES
 (1, 'email', 'mwilliams@sample.com'),
 (1, 'cpassword', 'mwilliams'),
 (1, 'cur_password', '20210001'),
-(4, 'lastname', 'Lou'),
-(4, 'firstname', 'Samantha Jane'),
-(4, 'middlename', 'C'),
-(4, 'gender', 'Female'),
-(4, 'dob', '1997-10-14'),
-(4, 'contact', '097876546522'),
-(4, 'address', 'Sample Address Only, Anywhere, 2306'),
-(4, 'email', 'sjlou@sample.com'),
-(4, 'cpassword', ''),
-(4, 'cur_password', '20210002'),
-(14, 'lastname', 'Test'),
-(14, 'firstname', 'Test'),
-(14, 'middlename', ''),
-(14, 'gender', 'Male'),
-(14, 'dob', '2000-02-17'),
-(14, 'contact', '09301653187'),
-(14, 'address', 'qwe'),
-(14, 'email', 'buybackisavailable@gmail.com');
+(18, 'lastname', 'Swift'),
+(18, 'firstname', 'Taylor'),
+(18, 'middlename', ''),
+(18, 'gender', 'Female'),
+(18, 'dob', '1998-12-13'),
+(18, 'contact', '09301653187'),
+(18, 'address', 'G'),
+(18, 'email', 'buybackisavailable@gmail.com'),
+(26, 'lastname', 'Lamperouge'),
+(26, 'firstname', 'Lelouch'),
+(26, 'middlename', ''),
+(26, 'gender', 'Male'),
+(26, 'dob', '2000-03-09'),
+(26, 'contact', '09301653187'),
+(26, 'address', 'Test'),
+(26, 'email', 'vincentcunanan53@gmail.com'),
+(24, 'lastname', 'Cunanan'),
+(24, 'firstname', 'Vincent'),
+(24, 'middlename', ''),
+(24, 'gender', 'Male'),
+(24, 'dob', '2000-03-25'),
+(24, 'contact', '09301653187'),
+(24, 'address', 'Test'),
+(24, 'email', 'vincentcunanan53@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -255,7 +277,16 @@ CREATE TABLE `invoice_list` (
 
 INSERT INTO `invoice_list` (`id`, `invoice_code`, `client_id`, `total_amount`, `discount_perc`, `discount`, `tax_perc`, `tax`, `remarks`, `status`, `date_created`, `date_updated`) VALUES
 (1, '202100001', 1, 592.9, 2, 12.1, 12, 72.6, 'Sample Only', 1, '2021-11-05 13:12:43', '2021-11-05 13:45:49'),
-(3, '202100002', 4, 717.24, 5, 37.7495, 12, 90.5988, 'Sample Invoice 2', 1, '2021-11-05 15:10:47', '2021-11-05 15:19:56');
+(3, '202100002', 4, 717.24, 5, 37.7495, 12, 90.5988, 'Sample Invoice 2', 1, '2021-11-05 15:10:47', '2021-11-05 15:19:56'),
+(57, '202300001', 4, 355, 0, 0, 0, 0, '', 0, '2023-02-19 05:14:07', '2023-02-19 05:14:07'),
+(58, '202300002', 17, 2500, 0, 0, 0, 0, '', 1, '2023-02-19 05:42:50', '2023-02-19 05:44:03'),
+(59, '202300003', 14, 2925.45, 1, 29.55, 1, 29.55, '', 1, '2023-02-21 03:39:47', '2023-02-21 03:40:20'),
+(60, '202300004', 17, 2855, 0, 0, 0, 0, '', 1, '2023-02-23 02:12:48', '2023-02-23 02:13:36'),
+(61, '202300005', 17, 2955, 0, 0, 0, 0, '', 1, '2023-02-23 02:13:03', '2023-02-23 02:13:23'),
+(62, '202300006', 24, 2955, 0, 0, 0, 0, 'Test', 0, '2023-02-25 15:38:10', '2023-02-25 15:38:10'),
+(63, '202300007', 24, 2500, 0, 0, 0, 0, '', 1, '2023-02-27 05:56:33', '2023-02-27 05:56:49'),
+(64, '202300008', 18, 2855, 0, 0, 0, 0, '', 0, '2023-02-27 06:01:27', '2023-02-27 06:01:27'),
+(65, '202300009', 64, 100, 0, 0, 0, 0, 'Test', 0, '2023-03-04 21:44:16', '2023-03-04 21:44:16');
 
 -- --------------------------------------------------------
 
@@ -341,7 +372,24 @@ INSERT INTO `invoice_services` (`invoice_id`, `service_id`, `price`) VALUES
 (53, 6, 2500),
 (54, 6, 2500),
 (55, 6, 2500),
-(56, 6, 2500);
+(56, 6, 2500),
+(57, 3, 355),
+(58, 6, 2500),
+(59, 3, 355),
+(59, 5, 100),
+(59, 6, 2500),
+(61, 3, 355),
+(61, 5, 100),
+(61, 6, 2500),
+(60, 3, 355),
+(60, 6, 2500),
+(62, 3, 355),
+(62, 6, 2500),
+(62, 5, 100),
+(63, 6, 2500),
+(64, 6, 2500),
+(64, 3, 355),
+(65, 5, 100);
 
 -- --------------------------------------------------------
 
@@ -375,6 +423,7 @@ INSERT INTO `payment_list` (`id`, `account_id`, `month_of`, `amount`, `date_crea
 
 CREATE TABLE `reports` (
   `id` int(11) NOT NULL,
+  `client_id` int(30) NOT NULL,
   `name` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
   `concern` text NOT NULL,
@@ -389,14 +438,12 @@ CREATE TABLE `reports` (
 -- Dumping data for table `reports`
 --
 
-INSERT INTO `reports` (`id`, `name`, `username`, `concern`, `floor`, `room`, `status`, `srfnumber`, `date_created`) VALUES
-(8, 'Carlo Santos', '12345678', '4th Floor 409 , sssssssssssssssss', '4th Floor', '409', '1', 'SRF-2aa734', '2023-02-16 15:11:45'),
-(11, 'Test Test', '20230001', 'Test', 'Ground Floor', '104', '1', 'SRF-77b084', '2023-02-16 17:14:01'),
-(12, 'Test Test', '20230001', 'Test', '3rd Floor', '309', '1', 'SRF-6db088', '2023-02-16 17:14:12'),
-(13, 'Test Test', '20230001', 'qwe', '2nd Floor', '209', '0', 'SRF-37991b', '2023-02-16 17:07:31'),
-(14, 'Test Test', '20230001', 'Test', '4th Floor', '409', '1', 'SRF-6410af', '2023-02-16 17:13:56'),
-(15, '', '', '', '', '', '0', 'SRF-00c660', '2023-02-16 17:16:52'),
-(16, '', '', '', '', '', '0', 'SRF-3a69ee', '2023-02-16 17:28:23');
+INSERT INTO `reports` (`id`, `client_id`, `name`, `username`, `concern`, `floor`, `room`, `status`, `srfnumber`, `date_created`) VALUES
+(1, 24, 'Vincent Cunanan', '', 'Test', 'Ground Floor', '103', '1', 'SRF-825328', '2023-03-06 05:04:42'),
+(2, 24, 'Vincent Cunanan', '', 'G', '304', '12', '1', 'SRF-ae7222', '2023-03-07 15:33:50'),
+(3, 24, 'Vincent Cunanan', '', 'G', '104', '104', '0', 'SRF-bdbfee', '2023-03-07 15:44:27'),
+(5, 68, 'Random Student', '', 'Testing', '12', '12', '1', 'SRF-89617a', '2023-03-07 16:59:30'),
+(6, 0, '', '', 'busted lights', '', '', '0', 'SRF-ab4aab', '2023-03-08 14:44:30');
 
 -- --------------------------------------------------------
 
@@ -459,14 +506,9 @@ CREATE TABLE `services_list` (
 --
 
 INSERT INTO `services_list` (`id`, `name`, `description`, `price`, `status`, `date_created`, `date_updated`) VALUES
-(1, 'Device Cleaning', 'Device Cleaning', 250, 1, '2021-11-05 09:48:30', '2021-11-05 09:48:30'),
-(2, 'Software Trouble Shooting', 'Software Trouble Shooting', 399.99, 1, '2021-11-05 09:50:34', '2021-11-05 09:50:34'),
 (3, 'Parts Replacements', 'Parts Replacements', 355, 1, '2021-11-05 09:51:53', '2021-11-05 09:51:53'),
 (5, 'Testing', 'No', 100, 1, '2023-02-16 16:26:15', '2023-02-16 23:07:20'),
-(6, 'Rent', 'Rental Payment', 2500, 1, '2022-08-29 22:18:12', '2022-08-29 22:18:12'),
-(14, 's', 's\n                        ', 22, 1, '2023-02-10 03:37:51', '2023-02-10 03:37:51'),
-(15, 'as', '\n  erer                      ', 220000, 1, '2023-02-10 03:40:25', '2023-02-10 03:40:25'),
-(16, '', '', 0, 1, '2023-02-16 20:18:26', '2023-02-16 20:18:26');
+(6, 'Rent', 'Rental Payment', 2500, 1, '2022-08-29 22:18:12', '2022-08-29 22:18:12');
 
 -- --------------------------------------------------------
 
@@ -543,8 +585,8 @@ CREATE TABLE `users` (
   `password` text NOT NULL,
   `avatar` text DEFAULT NULL,
   `last_login` datetime DEFAULT NULL,
-  `type` tinyint(1) NOT NULL DEFAULT 0,
-  `status` int(11) NOT NULL,
+  `type` tinyint(1) NOT NULL DEFAULT 1,
+  `status` int(11) NOT NULL DEFAULT 1,
   `date_added` datetime NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -557,8 +599,9 @@ INSERT INTO `users` (`id`, `firstname`, `middlename`, `lastname`, `username`, `p
 (1, 'Admin', NULL, 'Admin', 'admin', '0192023a7bbd73250516f069df18b500', 'uploads/avatar-1.png?v=1635556826', NULL, 1, 0, '2021-01-20 14:02:37', '2023-02-16 15:13:27'),
 (11, 'Claire', NULL, 'Blake', 'cblake', 'cd74fae0a3adf459f73bbf187607ccea', 'uploads/avatar-11.png?v=1635920566', NULL, 1, 0, '2021-11-03 14:22:46', '2023-02-16 18:39:15'),
 (14, 'John', NULL, 'Smith', 'jsmith', '39ce7e2a8573b41ce73b5ba41617f8f7', 'uploads/avatar-14.png?v=1636074078', NULL, 1, 0, '2021-11-05 09:01:18', '2023-02-16 15:56:29'),
-(15, '', NULL, '', '18010123', '18010123', NULL, NULL, 0, 0, '2023-02-16 22:15:39', NULL),
-(16, '', NULL, '', '181818', '181818', NULL, NULL, 0, 0, '2023-02-16 22:19:22', NULL);
+(23, 'qwe', NULL, 'qwe', 'qwerty', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'uploads/avatar-23.png?v=1676686526', NULL, 1, 0, '2023-02-18 02:15:26', '2023-02-21 06:11:30'),
+(27, 'Princess Edalia', NULL, 'Bautista', 'cess', '202cb962ac59075b964b07152d234b70', NULL, NULL, 1, 0, '2023-02-23 02:14:36', NULL),
+(28, 'Random', NULL, 'Test', 'randomtest', 'ffa0d7be709ac0ab29c7c140a618fc87', 'uploads/avatar-28.png?v=1677155578', NULL, 2, 0, '2023-02-23 12:32:58', '2023-02-23 13:10:06');
 
 -- --------------------------------------------------------
 
@@ -572,6 +615,17 @@ CREATE TABLE `user_meta` (
   `meta_value` text NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_meta`
+--
+
+INSERT INTO `user_meta` (`user_id`, `meta_field`, `meta_value`, `date_created`) VALUES
+(28, 'status', '1', '2023-02-23 13:08:28'),
+(28, 'status', '0', '2023-02-23 13:08:38'),
+(28, 'status', '1', '2023-02-23 13:08:44'),
+(28, 'status', '1', '2023-02-23 13:09:38'),
+(28, 'status', '0', '2023-02-23 13:10:06');
 
 --
 -- Indexes for dumped tables
@@ -625,7 +679,8 @@ ALTER TABLE `invoice_services`
 -- Indexes for table `reports`
 --
 ALTER TABLE `reports`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `client_id` (`client_id`);
 
 --
 -- Indexes for table `room_list`
@@ -665,19 +720,19 @@ ALTER TABLE `user_meta`
 -- AUTO_INCREMENT for table `applicant`
 --
 ALTER TABLE `applicant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `applicant_attachment`
 --
 ALTER TABLE `applicant_attachment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `client_list`
 --
 ALTER TABLE `client_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `floor`
@@ -689,13 +744,13 @@ ALTER TABLE `floor`
 -- AUTO_INCREMENT for table `invoice_list`
 --
 ALTER TABLE `invoice_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `room_list`
@@ -707,7 +762,7 @@ ALTER TABLE `room_list`
 -- AUTO_INCREMENT for table `services_list`
 --
 ALTER TABLE `services_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `system_info`
@@ -719,7 +774,7 @@ ALTER TABLE `system_info`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Constraints for dumped tables
