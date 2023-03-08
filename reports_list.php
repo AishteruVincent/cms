@@ -76,7 +76,7 @@ input[type="text"]:focus {
 				<tbody>
 					<?php 
 					$i = 1;
-						$qry = $conn->query("SELECT * from `reports` order by `date_created` asc");
+					$qry = $conn->query("SELECT r.*,c.fullname  from `reports` r inner join client_list c on r.client_id = c.id where r.client_id = '{$_settings->userdata('id')}' order by unix_timestamp(r.date_created) desc ");
 						while($row = $qry->fetch_assoc()):
 					?>
 						<tr>

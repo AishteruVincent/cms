@@ -269,6 +269,20 @@ Class Master extends DBConnection {
 
 	}
 
+	function delete_reports(){
+		extract($_POST);
+		$del = $this->conn->query("DELETE FROM `reports` where id = '{$id}'");
+		if($del){
+			$resp['status'] = 'success';
+			$this->settings->set_flashdata('success',"Report successfully deleted.");
+		}else{
+			$resp['status'] = 'failed';
+			$resp['error'] = $this->conn->error;
+		}
+		return json_encode($resp);
+
+	}
+
 	function delete_room(){
 		extract($_POST);
 		$del = $this->conn->query("UPDATE `room_list` set delete_flag = 1 where id = '{$id}'");
@@ -641,6 +655,9 @@ switch ($action) {
 	break;
 	case 'save_reports':
 		echo $Master->save_reports();
+	break;
+	case 'save_reports':
+		echo $Master->delete_reports();
 	break;
 	case 'save_applicants':
 		echo $Master->save_applicants();
