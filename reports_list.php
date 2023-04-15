@@ -109,7 +109,6 @@ input[type="text"]:focus {
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Service Report Form</h5>
       </div>
-       <input type="hidden" name ="clientid" id="clientid" value="<?php echo $_SESSION['client_id']; ?>">
       <div class="modal-body">
         <p style="text-align: right;">
         <?php 

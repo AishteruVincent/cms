@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'u853565338_aero', 'Testpassw0rd!', 'u853565338_aero');	
+$conn = mysqli_connect('localhost', 'root', '', 'cms_db');	
 	if(isset($_POST['submit_report'])) {
 		$name = $_POST['name'];
 		$clientid = $_POST['client_id'];

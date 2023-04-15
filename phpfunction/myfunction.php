@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'u853565338_aero', 'Testpassw0rd!', 'u853565338_aero');	
+$conn = mysqli_connect('localhost', 'root', '', 'cms_db');	
 	if(isset($_FILES['attachment'])) {
 		$studentname = $_POST['studentname'];
 		$idnumber = $_POST['idnumber'];
