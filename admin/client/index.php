@@ -17,7 +17,7 @@
 	<div class="card-header">
 		<h3 class="card-title">List of Students</h3>
 		<div class="card-tools">
-			<a href="<?php echo base_url."admin?page=client/manage_client" ?>" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>  Add New Client</a>
+			<!--<a href="<?php //echo base_url."admin?page=client/manage_client" ?>" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>  Add New Client</a> -->
 		</div>
 	</div>
 	<div class="card-body">

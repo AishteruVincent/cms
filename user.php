@@ -24,6 +24,7 @@
         border-radius:0;
     }
 </style>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
 <div class="card card-outline card-primary">
     <div class="card-header">
         <h5 class="card-title">Update Information and Credentials</h5>

@@ -22,13 +22,16 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group">
 			<label for="status" class="control-label">Status</label>
-			<select name="status" id="status" class="custom-select selevt">
+			<select name="status" id="status" class="custom-select select">
 			<option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Accepted</option>
 			<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Pending</option>
 			</select>
 		</div>
 	</form>
 </div>
+
+
+
 <script>
 	$(document).ready(function(){
 		$('#service-form').submit(function(e){

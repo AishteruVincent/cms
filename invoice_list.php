@@ -13,6 +13,7 @@
         border-radius:100%;
     }
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Invoices</h3>
@@ -47,9 +48,9 @@
 					?>
 						<tr>
 							<td class="text-center"><?php echo $i++; ?></td>
-							<td class="text-right"><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
+							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
 							<td><?php echo $row['invoice_code'] ?></td>
-							<td class="text-right"><?php echo number_format($row['total_amount'],2) ?></td>
+							<td><?php echo number_format($row['total_amount'],2) ?></td>
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
                                     <span class="badge badge-success rounded-pill">Paid</span>

@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'cms_db');	
+$conn = mysqli_connect('localhost', 'u853565338_aero', 'Testpassw0rd!', 'u853565338_aero');	
 	if(isset($_FILES['attachment'])) {
 		$studentname = $_POST['studentname'];
 		$idnumber = $_POST['idnumber'];
@@ -24,7 +24,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'cms_db');
 
         if(mysqli_num_rows($result) > 0) {
         } else {
-            $insertdata = $conn->query("INSERT INTO users (username, password) VALUES ('$idnumber', '$idnumber')");
+            $insertdata = $conn->query("INSERT INTO client_list (client_code, password, fullname, email, contact, address) VALUES ('$idnumber', '$idnumber', '$studentname', '$email', '$contactnumber','$cityandprovinceaddress')");
         }
 
 		
@@ -52,7 +52,5 @@ $conn = mysqli_connect('localhost', 'root', '', 'cms_db');
 			}
 		}
 	}
-
-
 
 ?>

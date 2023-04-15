@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'cms_db');
+$conn = mysqli_connect('localhost', 'u853565338_aero', 'Testpassw0rd!', 'u853565338_aero');
 if( isset($_POST['submit_login'])){
 	$username=$_POST['username']; 
 	$password=$_POST['password']; 

@@ -4,7 +4,7 @@
 	alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
 </script>
 <?php endif;?>
-<div class="card card-outline rounded-0 card-maroon">
+<div class="card card-outline rounded-0 card-blue">
 	<div class="card-header">
 		<h3 class="card-title">List of Rooms</h3>
 		<?php if($_settings->userdata('type') == 1): ?>
@@ -56,7 +56,7 @@
 							<td class="text-right"><?php echo $row['price'] ?></td>
 							<td class="text-center">
 								<?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-maroon bg-gradient-maroon px-3 rounded-pill">Active</span>
+                                    <span class="badge badge-maroon bg-gradient-green px-3 rounded-pill">Active</span>
                                 <?php else: ?>
                                     <span class="badge badge-light bg-gradient-light border text-dark px-3 rounded-pill">Inactive</span>
                                 <?php endif; ?>

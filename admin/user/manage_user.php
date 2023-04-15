@@ -45,10 +45,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 					</select>
 				</div>
 				<div class="form-group col-6">
-					<label for="type">Status</label>
-					<select name="type" id="type" class="custom-select" value="<?php echo isset($meta['status']) ? $meta['status']: '' ?>" required>
+					<label for="status">Status</label>
+					<select name="status" id="status" class="custom-select" value="<?php echo isset($meta['status']) ? $meta['status']: '' ?>" required>
 						<option value="1" <?php echo isset($status) && $status == 1 ? 'selected': '' ?>>Active</option>
-						<option value="2"> <?php echo isset($status) && $status == 2 ? 'selected': '' ?>Inactive</option>
+						<option value="0"> <?php echo isset($status) && $status == 0 ? 'selected': '' ?>Inactive</option>
 					</select>
 				</div>
 				<div class="form-group col-6">

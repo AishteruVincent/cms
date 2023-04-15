@@ -24,14 +24,15 @@
 						<th>Date Created</th>
 						<th>Student Number</th>
 						<th>Name</th>
-						<th>Program</th>
+						<th>Attachment</th>
+						<!--<th>Program</th>
 						<th>Contact Number</th>
                         <th>Email</th>
                         <th>Parent Name</th>
                         <th>Parent's Address</th>
                         <th>Parent's Contact Number</th>
                         <th>Floor</th>
-                        <th>Room</th>
+                        <th>Room</th> -->
                         <th>Status</th>
 						<th>Action</th>
 					</tr>
@@ -47,14 +48,15 @@
 							<td><?php echo date("Y-m-d H:i",strtotime($row['date_added'])) ?></td>
 							<td><?php echo $row['idnumber'] ?></td>
 							<td><?php echo $row['studentname'] ?></td>
-							<td><?php echo $row['program'] ?></td>
+							<td><img src="<?php echo validate_image(isset($row['attachment']) ? $row['attachment'] :'') ?>" alt="" id="cimg" class="img-fluid img-thumbnail"></td>
+							<!--<td><?php /*echo $row['program'] ?></td>
                             <td><?php echo $row['contact_number'] ?></td>
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['parentname'] ?></td>
                             <td><?php echo $row['parent_address'] ?></td>
                             <td><?php echo $row['parent_contact'] ?></td>
                             <td><?php echo $row['floor'] ?></td>
-                            <td><?php echo $row['room'] ?></td>
+                            <td><?php echo $row['room'] */?></td> -->
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
                                     <span class="badge badge-success rounded-pill">Accepted</span>
@@ -68,6 +70,7 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
+									<a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item edit_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
 				                    <div class="dropdown-divider"></div>
@@ -85,7 +88,7 @@
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this Service permanently?","delete_service",[$(this).attr('data-id')])
+			_conf("Are you sure to delete this applicant permanently?","delete_service",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
 			uni_modal("<i class='fa fa-plus'></i> Add New Service","maintenance/manage_service.php","mid-large")
@@ -94,7 +97,7 @@
 			uni_modal("<i class='fa fa-edit'></i> Edit Applicant Details","applicants/status.php?id="+$(this).attr('data-id'),"mid-large")
 		})
 		$('.view_data').click(function(){
-			uni_modal("<i class='fa fa-list'></i> Service Details","maintenance/view_service.php?id="+$(this).attr('data-id'),"")
+			uni_modal("<i class='fa fa-list'></i> Service Details","applicants/view_applicants.php?id="+$(this).attr('data-id'),"")
 		})
 		$('.table td,.table th').addClass('py-1 px-2 align-middle')
 		$('.table').dataTable();
@@ -102,7 +105,7 @@
 	function delete_service($id){
 		start_loader();
 		$.ajax({
-			url:_base_url_+"classes/Master.php?f=delete_service",
+			url:_base_url_+"classes/Master.php?f=delete_applicants",
 			method:"POST",
 			data:{id: $id},
 			dataType:"json",

@@ -183,7 +183,7 @@ if(isset($_GET['id'])){
             var _this = $(this)
 			 $('.err-msg').remove();
              if($('#service-list tbody tr').length <= 0){
-                 alert_toast("Please Add at least 1 Service on the List.","warning")
+                 alert_toast("Please add at least 1 service on the list.","warning")
                  return false;
              }
 			start_loader();

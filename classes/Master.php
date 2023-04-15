@@ -159,7 +159,7 @@ Class Master extends DBConnection {
 		if($save){
 			$resp['status'] = 'success';
 			if(empty($id)){
-				$res['msg'] = "New Service successfully saved.";
+				$res['msg'] = "New report successfully saved.";
 				$id = $this->conn->insert_id;
 			}else{
 				$res['msg'] = "Report successfully updated.";
@@ -171,6 +171,20 @@ Class Master extends DBConnection {
 		}
 		return json_encode($resp);
 	}
+	
+	function delete_reports(){
+		extract($_POST);
+		$del = $this->conn->query("DELETE FROM `reports` where id = '{$id}'");
+		if($del){
+			$resp['status'] = 'success';
+			$this->settings->set_flashdata('success',"Report successfully deleted.");
+		}else{
+			$resp['status'] = 'failed';
+			$resp['error'] = $this->conn->error;
+		}
+		return json_encode($resp);
+
+	}
 
 	function save_applicants(){
 		extract($_POST);
@@ -181,8 +195,9 @@ Class Master extends DBConnection {
 				$data .= " `{$k}`='{$v}' ";
 			}
 		}
-		$status = $_POST['status'];
-		$check = $this->conn->query("SELECT * FROM `applicant` where `studentname` = '{$status}' ".(!empty($id) ? " and id != {$id} " : "")." ")->num_rows;
+		
+		$studentname = $_POST['studentname'];
+		$check = $this->conn->query("SELECT * FROM `applicant` where `studentname` = '{$studentname}' ".(!empty($id) ? " and id != {$id} " : "")." ")->num_rows;
 		if($this->capture_err())
 			return $this->capture_err();
 		if($check > 0){
@@ -194,17 +209,24 @@ Class Master extends DBConnection {
 		if(empty($id)){
 			$sql = "INSERT INTO `applicant` set {$data} ";
 			$save = $this->conn->query($sql);
+			
 		}else{
 			$sql = "UPDATE `applicant` set {$data} where id = '{$id}' ";
 			$save = $this->conn->query($sql);
+			
+		    //$sql = "UPDATE applicant SET status = 1, remarks = '$remarks' WHERE id = '$id'";
+            // = $this->conn->query($query);
+            
+           // $insert = "INSERT INTO client_list(client_code, password, fullname) VALUES ('$idnumber', '$idnumber', '$studentname')";
+            //$save = $this->conn->query($insert);
 		}
 		if($save){
 			$resp['status'] = 'success';
 			if(empty($id)){
-				$res['msg'] = "New Service successfully saved.";
+				$res['msg'] = "New applicant successfully saved.";
 				$id = $this->conn->insert_id;
 			}else{
-				$res['msg'] = "Service successfully updated.";
+				$res['msg'] = "Applicant successfully updated.";
 			}
 		$this->settings->set_flashdata('success',$res['msg']);
 		}else{
@@ -260,7 +282,7 @@ Class Master extends DBConnection {
 		$del = $this->conn->query("DELETE FROM `applicant` where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success',"Service successfully deleted.");
+			$this->settings->set_flashdata('success',"Applicant successfully deleted.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['error'] = $this->conn->error;
@@ -437,9 +459,9 @@ Class Master extends DBConnection {
 		}
 		if($resp['status'] == 'success'){
 			if(empty($id)){
-				$this->settings->set_flashdata('success'," New Client successfully added.");
+				$this->settings->set_flashdata('success'," New student successfully added.");
 			}else{
-				$this->settings->set_flashdata('success'," Client's Details Successfully updated.");
+				$this->settings->set_flashdata('success'," Student's details successfully updated.");
 			}
 		}
 
@@ -450,7 +472,7 @@ Class Master extends DBConnection {
 		$del = $this->conn->query("DELETE FROM `client_list` where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success',"Client Details Successfully deleted.");
+			$this->settings->set_flashdata('success',"Student details successfully deleted.");
 			if(is_file(base_app.'uploads/client-'.$id.'.png'))
 			unlink(base_app.'uploads/client-'.$id.'.png');
 		}else{
@@ -521,9 +543,9 @@ Class Master extends DBConnection {
 		}
 		if($resp['status'] == 'success'){
 			if(empty($id)){
-				$this->settings->set_flashdata('success'," New Invoice successfully added.");
+				$this->settings->set_flashdata('success'," New invoice successfully added.");
 			}else{
-				$this->settings->set_flashdata('success'," Invoice's Details Successfully updated.");
+				$this->settings->set_flashdata('success'," Invoice's details successfully updated.");
 			}
 		}
 
@@ -547,7 +569,7 @@ Class Master extends DBConnection {
 		$update = $this->conn->query("UPDATE `client_list` set `password` = md5(`client_code`) where id = '{$id}'");
 		if($update){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success',"Client's Password successfully reset.");
+			$this->settings->set_flashdata('success',"Student's password successfully reset.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['msg'] = "Client's Password has failed to reset.";
@@ -641,6 +663,9 @@ switch ($action) {
 	break;
 	case 'save_reports':
 		echo $Master->save_reports();
+	break;
+	case 'delete_reports':
+		echo $Master->delete_reports();
 	break;
 	case 'save_applicants':
 		echo $Master->save_applicants();
